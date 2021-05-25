@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className="header">
       <h2>Xpensify</h2>
-      <NavLink activeClassName="is-active" exact to="/">
+      <NavLink activeClassName="is-active" to="/">
         Home
       </NavLink>
       <NavLink activeClassName="is-active" to="/create">
