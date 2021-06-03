@@ -31,16 +31,16 @@ const expenseReducer = (state = expenseReducerStateDefault, action) => {
       return state;
   }
 };
-const filterReducerStateDefault = {};
+const filterReducerStateDefault = {
+  sortBy: 'amount',
+  text: 'rent',
+  startDate: undefined,
+  endDate: undefined
+};
 const filterReducer = (state = filterReducerStateDefault, action) => {
   switch (action.type) {
     default:
-      return {
-        sortBy: 'amount',
-        text: 'rent',
-        startDate: undefined,
-        endDate: undefined
-      };
+      return state;
   }
 };
 
