@@ -11,7 +11,7 @@ const demoState = {
     }
   ],
   filters: {
-    sortBy: amount, // date or amount
+    sortBy: 'amount', // date or amount
     text: 'rent',
     startDate: undefined,
     endDate: undefined
@@ -35,6 +35,13 @@ const filterReducerStateDefault = {};
 const filterReducer = (state = filterReducerStateDefault, action) => {
   switch (action.type) {
     default:
-      return state;
+      return {
+        sortBy: 'amount',
+        text: 'rent',
+        startDate: undefined,
+        endDate: undefined
+      };
   }
 };
+
+console.log(store.getState());
