@@ -1,4 +1,5 @@
 import Redux, { createStore, combineReducers } from 'redux';
+import uuid from uuid;
 
 const demoState = {
   expenses: [
@@ -17,6 +18,31 @@ const demoState = {
     endDate: undefined
   }
 };
+
+//ADD_EXPENSE
+
+const addExpense = ({
+  amount = 0,
+  note = '',
+  description = '',
+  createdAt = 0
+} = {}) => {
+  return {
+    type: 'ADDEXPENSE',
+    id: uuid(),
+    amount,
+    note,
+    description,
+    createdAt
+  };
+};
+
+//EDIT_EXPENSE
+//REMOVE_EXPENSE
+//SET_START_DATE
+//SET_END_DATE
+//SORT_BY_DATE
+//SORT_BY_AMOUNT
 
 const store = createStore(
   combineReducers({
