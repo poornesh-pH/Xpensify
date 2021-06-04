@@ -53,6 +53,10 @@ const store = createStore(
 const expenseReducerStateDefault = [];
 const expenseReducer = (state = expenseReducerStateDefault, action) => {
   switch (action.type) {
+    case "ADDEXPENSE" :
+    return[
+      ...state,action.expenses
+    ]
     default:
       return state;
   }
