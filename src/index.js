@@ -11,10 +11,9 @@ console.log(getVisibleExpense())
 
 const expense1 = store.dispatch(
   addExpense({
-    amount: 5000,
-    note: 'this is grocery expense',
+    amount : 100,
     description: 'Grocery',
-    createdAt: 0
+   
   })
 );
 
