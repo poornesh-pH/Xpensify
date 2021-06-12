@@ -6,15 +6,13 @@ import {addExpense} from './Redux/actions/expenseAct';
 import {setTextField} from './Redux/actions/filtersRed';
 import getVisibleExpense from './Redux/selectors/expensesSel';
 const store = configureStore();
-
-console.log(getVisibleExpense())
-
-const expense1 = store.dispatch(
-  addExpense({
-    amount : 100,
-    description: 'Grocery',
+// const expense1 = store.dispatch(
+//   addExpense({
+//     amount : 100,
+//     description: 'Grocery',
    
-  })
-);
-
+//   })
+// );
+console.log(store.getState())
+// console.log(getVisibleExpense())
 ReactDOM.render(<AppRouter />, document.getElementById('root'));
