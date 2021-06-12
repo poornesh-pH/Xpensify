@@ -4,7 +4,7 @@ const filterReducerStateDefault = {
   startDate: undefined,
   endDate: undefined
 };
-const filterReducer = (state = filterReducerStateDefault, action) => {
+export default (state = filterReducerStateDefault, action) => {
   switch (action.type) {
     case 'FILTER_BY_TEXT':
       return { ...state, text: action.text };
