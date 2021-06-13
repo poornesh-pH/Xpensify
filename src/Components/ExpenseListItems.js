@@ -4,11 +4,7 @@ const ExpenseListItems = props => {
   console.log(props);
   return (
     <div>
-      {props.expenses.map(expense => (
-        <div key={expense.id}>
-          <h3>{expense.description}</h3>
-        </div>
-      ))}
+      <h3>{props.expense.description}</h3>
     </div>
   );
 };

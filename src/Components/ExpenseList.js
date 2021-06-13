@@ -4,8 +4,12 @@ import ExpenseListItems from './ExpenseListItems';
 
 const ExpenseList = props => (
   <div>
-    <ExpenseListItems expenses={props.expenses} />
-  </div>
+      {props.expenses.map(expense => (
+        <div key={expense.id}>
+       <ExpenseListItems expense={expense} />
+        </div>
+      ))}
+    </div>
 );
 
 const mapStateToProps = state => {
