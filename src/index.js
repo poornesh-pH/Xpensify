@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './Router/AppRouter';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import configureStore from './Redux/store/store';
 import { addExpense } from './Redux/actions/expenseAct';
 import { setTextField } from './Redux/actions/filtersAct';
@@ -19,15 +19,15 @@ const expense2 = store.dispatch(
     description: 'Rent'
   })
 );
-const sortByText = store.dispatch(setTextField({text:"ent"}))
+const sortByText = store.dispatch(setTextField({ text: 'ent' }));
 // console.log(store.getState());
 const state = store.getState();
-const visibleExpeses = getVisibleExpense(state.expenses,state.filters);
+const visibleExpeses = getVisibleExpense(state.expenses, state.filters);
 console.log(visibleExpeses);
 
 const jsx = (
   <Provider store={store}>
-<AppRouter />
-  </Provider >
-)
+    <AppRouter />
+  </Provider>
+);
 ReactDOM.render(jsx, document.getElementById('root'));
