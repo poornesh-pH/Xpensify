@@ -5,9 +5,7 @@ import ExpenseListItems from './ExpenseListItems';
 const ExpenseList = props => (
   <div>
       {props.expenses.map(expense => (
-        <div key={expense.id}>
-       <ExpenseListItems expense={expense} />
-        </div>
+       <ExpenseListItems key={expense.id} {...expense} />
       ))}
     </div>
 );
