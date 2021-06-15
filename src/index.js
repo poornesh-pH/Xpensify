@@ -19,7 +19,13 @@ const expense2 = store.dispatch(
     description: 'Rent'
   })
 );
-const sortByText = store.dispatch(setTextField('ent'));
+const expense3 = store.dispatch(
+  addExpense({
+    amount: 200,
+    description: 'Tea'
+  })
+);
+const sortByText = store.dispatch(setTextField(''));
 // console.log(store.getState());
 const state = store.getState();
 const visibleExpeses = getVisibleExpense(state.expenses, state.filters);
