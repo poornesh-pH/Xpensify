@@ -1,5 +1,5 @@
 //FILTER_BY_TEXT
-export const setTextField = ({ text = '' } = {}) => {
+export const setTextField = ( text = '') => {
   return {
     type: 'FILTER_BY_TEXT',
     text
