@@ -11,7 +11,7 @@ const ExpenseSearch = props => (
         props.dispatch(setTextField(e.target.value));
       }}
     />
-    <select onChange={(e)=>{
+    <select value={props.filters.sortBy} onChange={(e)=>{
      e.target.value === "date" ? props.dispatch(sortByDate()) : props.dispatch(sortByAmount())
     }}>
     <option value="date">Date</option>
