@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {setTextField} from '../Redux/actions/filtersAct';
+import {setTextField,sortByDate,sortByAmount} from '../Redux/actions/filtersAct';
 
 const ExpenseSearch = props => (
   <div>
@@ -11,6 +11,12 @@ const ExpenseSearch = props => (
         props.dispatch(setTextField(e.target.value));
       }}
     />
+    <select onChange={(e)=>{
+     e.target.value === "date" ? props.dispatch(sortByDate()) : props.dispatch(sortByAmount())
+    }}>
+    <option value="date">Date</option>
+    <option value="amount">Amount</option>
+    </select>
   </div>
 );
 

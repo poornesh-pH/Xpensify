@@ -10,19 +10,22 @@ const store = configureStore();
 const expense1 = store.dispatch(
   addExpense({
     amount: 100,
-    description: 'Grocery'
+    description: 'Grocery',
+    createdAt : 10
   })
 );
 const expense2 = store.dispatch(
   addExpense({
     amount: 500,
-    description: 'Rent'
+    description: 'Rent',
+    createdAt: 20
   })
 );
 const expense3 = store.dispatch(
   addExpense({
     amount: 200,
-    description: 'Tea'
+    description: 'Tea',
+    createdAt: 30
   })
 );
 const sortByText = store.dispatch(setTextField(''));
