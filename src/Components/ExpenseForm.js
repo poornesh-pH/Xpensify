@@ -46,6 +46,7 @@ export default class ExpenseForm extends Component {
            onFocusChange = {this.onFocusChange}
            small = {true}
            numberOfMonths= {1}
+           isOutsideRange ={()=>false}
            />
           <input type="submit" value="Add Expense" />
         </form>
