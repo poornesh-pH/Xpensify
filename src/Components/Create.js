@@ -1,10 +1,12 @@
 import React from 'react';
 import ExpenseForm from './ExpenseForm';
-export default function About() {
+export default function Create() {
   return (
     <div>
-      <h3>Create Component</h3>
-      <ExpenseForm />
+      <h3>Add Expense</h3>
+      <ExpenseForm onSubmit={(expense)=>{
+        console.log("Add_expense",expense)
+      }}/>
     </div>
   );
 }

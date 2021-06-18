@@ -29,7 +29,12 @@ export default class ExpenseForm extends Component {
     if (!this.state.description || !this.state.amount) {
       this.setState({ error: 'Fill the Description and Amount' });
     } else {
-      console.log('Submitted');
+     this.props.onSubmit({
+       description:this.state.description,
+       note: this.state.note,
+       amount: this.state.amount,
+       createdAt: this.state.createdAt.valueOf()
+     })
     }
   };
   clearError = () => {
