@@ -20,6 +20,7 @@ export const addExpense = ({
 };
 //EDIT_EXPENSE
 export const editExpense = (id, updates) => {
+  console.log(id,updates," edit action")
   return {
     type: 'EDIT_EXPENSE',
     id,

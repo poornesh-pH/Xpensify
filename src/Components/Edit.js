@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import ExpenseForm from './ExpenseForm'
+import {editExpense} from '../Redux/actions/expenseAct'
 function Edit(props){
   console.log(props.expense,'edit')
   return(
@@ -8,7 +9,7 @@ function Edit(props){
     <p>Edit Expense {props.match.params.id}</p>
     <ExpenseForm expense = {props.expense}
     onSubmit = {(expense)=>{
-      console.log(expense)
+     props.dispatch(editExpense(props.expense.id,expense))
       props.history.push('/')
     }}/>
     </div>
