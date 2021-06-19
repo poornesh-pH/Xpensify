@@ -5,19 +5,24 @@ import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 
 export default class ExpenseForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: props.expense ? props.expense.description :  '',
+      note: props.expense ? props.expense.note : '',
+      amount: props.expense ? props.expense.amount : '',
+      createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+      calanderFocused: false,
+      error: ''
+    };
+  }
+
   setValues = e => {
     this.setState(() => ({
       [e.target.name]: e.target.value
     }));
   };
-  state = {
-    description: '',
-    note: '',
-    amount: '',
-    createdAt: moment(),
-    calanderFocused: false,
-    error: ''
-  };
+
   onDateChange = createdAt => {
     createdAt && this.setState({ createdAt });
   };
@@ -29,12 +34,12 @@ export default class ExpenseForm extends Component {
     if (!this.state.description || !this.state.amount) {
       this.setState({ error: 'Fill the Description and Amount' });
     } else {
-     this.props.onSubmit({
-       description:this.state.description,
-       note: this.state.note,
-       amount: this.state.amount,
-       createdAt: this.state.createdAt.valueOf()
-     })
+      this.props.onSubmit({
+        description: this.state.description,
+        note: this.state.note,
+        amount: this.state.amount,
+        createdAt: this.state.createdAt.valueOf()
+      });
     }
   };
   clearError = () => {
@@ -59,12 +64,14 @@ export default class ExpenseForm extends Component {
             name="amount"
             onFocus={this.clearError}
             onChange={this.setValues}
+            value={this.state.amount}
           />
 
           <textarea
             placeholder="Note (optional)"
             name="note"
             onChange={this.setValues}
+            value={this.state.note}
           />
           <SingleDatePicker
             date={this.state.createdAt}
