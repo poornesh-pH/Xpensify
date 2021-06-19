@@ -6,7 +6,7 @@ import Create from '../Components/Create';
 import Header from '../Components/Header';
 import Help from '../Components/Help';
 import PageNotFound from '../Components/PageNotFound';
-
+import Edit from '../Components/Edit';
 export default function AppRouter() {
   return(
   <BrowserRouter>
@@ -15,6 +15,7 @@ export default function AppRouter() {
       <Route exact path="/" component={App} />
       <Route path="/about" component={About} />
       <Route path="/create" component={Create} />
+      <Route path="/edit/:id" component={Edit}/>
       <Route path="/help" component={Help} />
       <Route component={PageNotFound} />
     </Switch>
