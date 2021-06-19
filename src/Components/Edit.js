@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
-import { editExpense } from '../Redux/actions/expenseAct';
-import { removeExpense } from '../Redux/actions/expenseAct';
+import { editExpense, removeExpense } from '../Redux/actions/expenseAct';
+
 
 function Edit(props) {
   return (
