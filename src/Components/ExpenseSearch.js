@@ -6,14 +6,17 @@ import {
   sortByDate,
   sortByAmount,
   setStartDate,
-  setEndDate
+  setEndDate,
 } from '../Redux/actions/filtersAct';
 import { DateRangePicker } from 'react-dates';
 class ExpenseSearch extends Component {
   state = {
-    calenderFocused: null
+    calenderFocused: null,
+    startDateId: null,
+    endDateId: null
   };
   onDatesChange = ({ startDate, endDate }) => {
+    this.setState({startDateId:startDate, endDateId:endDate})
     this.props.dispatch(setStartDate(startDate));
     this.props.dispatch(setEndDate(endDate));
   };
@@ -51,6 +54,8 @@ class ExpenseSearch extends Component {
           isOutsideRange={() => false}
           numberOfMonths={1}
           showClearDates={true}
+          startDateId ={this.state.startDateId}
+          endDateId= {this.state.endDateId}
         />
       </div>
     );
