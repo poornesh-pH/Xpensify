@@ -28,11 +28,11 @@ const expense3 = store.dispatch(
     createdAt: 30
   })
 );
-const sortByText = store.dispatch(setTextField(''));
+// const sortByText = store.dispatch(setTextField(''));
 // console.log(store.getState());
 const state = store.getState();
-const visibleExpeses = getVisibleExpense(state.expenses, state.filters);
-console.log(visibleExpeses);
+// const visibleExpeses = getVisibleExpense(state.expenses, state.filters);
+// console.log(visibleExpeses);
 
 const jsx = (
   <Provider store={store}>
