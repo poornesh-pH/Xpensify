@@ -17,8 +17,8 @@ class ExpenseSearch extends Component {
     this.props.dispatch(setStartDate(startDate));
     this.props.dispatch(setEndDate(endDate));
   };
-  onFocusChange = focusedInput => {
-    this.setState({ calenderFocused: focusedInput });
+  onFocusChange = calenderFocused => {
+    this.setState({ calenderFocused });
   };
   render() {
     return (
@@ -50,6 +50,7 @@ class ExpenseSearch extends Component {
           onFocusChange={this.onFocusChange}
           isOutsideRange={() => false}
           numberOfMonths={1}
+          showClearDates={true}
         />
       </div>
     );
