@@ -30,7 +30,7 @@ const expense3 = store.dispatch(
 );
 // const sortByText = store.dispatch(setTextField(''));
 // console.log(store.getState());
-const state = store.getState();
+// const state = store.getState();
 // const visibleExpeses = getVisibleExpense(state.expenses, state.filters);
 // console.log(visibleExpeses);
 
