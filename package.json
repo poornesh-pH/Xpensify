@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "xpensify-jest",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
@@ -23,5 +23,7 @@
   },
   "devDependencies": {
     "react-scripts": "latest"
-  }
+  },
+  "keywords": [],
+  "description": "xpensify application with the Jest test cases"
 }
